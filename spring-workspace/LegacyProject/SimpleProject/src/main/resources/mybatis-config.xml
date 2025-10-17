@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration> 
+<!-- settings : 설정들을 작성하는 영역-->
+<settings>
+ <!-- 만약에 빈 값이 들어오면 빈 칸이 아니라 NULL값으로 인식하겠다. -->
+ <setting name="jdbcTypeForNull" value="NULL"/>
+ <!-- 꼭 대문자로 NULL써야함 -->
+</settings>
+
+	<typeAliases>
+		
+	</typeAliases>
+	
+	<!-- 
+		environments, dataSource => DB연결정보 	
+	 -->
+	
+	<mappers>
+		
+	</mappers>
+</configuration>
