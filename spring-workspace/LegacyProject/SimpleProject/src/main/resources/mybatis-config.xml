@@ -13,7 +13,7 @@
 </settings>
 
 	<typeAliases>
-		
+
 	</typeAliases>
 	
 	<!-- 
@@ -21,6 +21,6 @@
 	 -->
 	
 	<mappers>
-		
+		<mapper resource="/mapper/member-mapper.xml"/>
 	</mappers>
 </configuration>
