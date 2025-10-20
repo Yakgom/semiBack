@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>써보자편</title>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+        
+            div{
+                box-sizing: border-box;
+            }
+            #wrap {
+                width: 1200px;
+                height: 500px;
+                margin: auto;
+                box-shadow: 1px 1px 1px lightgray;
+            }
+
+            .lodging{
+                width: 180px;
+                height: 360px;
+                padding-bottom: 20px;
+                display: inline-block;
+                margin-right: 40px;
+
+                
+            }
+
+            .lodging > img{
+                width: 200px;
+                height: 200px;
+                border-radius: 15px;
+                &:hover{
+                    box-shadow: 1px 2px 4px rgb(221, 136, 136);
+                }
+            }
+            .lodging > h4{
+                font-size: 18px;
+                font-weight: 800;
+
+            }
+            .lodging > p {
+                font-size: 14px;
+                font-weight: 500;
+            }
+        </style>
+    </head>
+    <body>
+        
+
+
+        <div id="wrap">
+            <h3 style="margin-bottom: 20px;">부산의 인기 숙소</h3>
+        </div>
+
+        <script>
+            window.onload = function () {
+                
+
+                const lodging = [
+                    {
+                        image : "https://a0.muscache.com/im/pictures/hosting/Hosting-1254611685750285523/original/5a7cbab5-d254-4068-81f2-7aeec2554cf9.jpeg?im_w=480",
+                        placeName : "동래구의 아파트",
+                        date : "11월 28일~30일",
+                        price : "￦80,453",
+                        days : "2박",
+                        reviewRating : "★4.86" 
+                    },
+                    {
+                        image : "https://a0.muscache.com/im/pictures/hosting/Hosting-1157133225923295926/original/1664a4f5-dde0-404b-abb8-75b15946d44c.jpeg?im_w=480",
+                        placeName :"부산의 아파트",
+                        date : "4월 17~19일",
+                        price : "￦251,059",
+                        days :  "2박",
+                        reviewRating : "★4.95" 
+                    },
+                    {
+                        image : "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTU5MTE2NjUyNjY5NTc0NzQ5/original/05ea7367-616a-41b7-af70-be5d5da73669.jpeg?im_w=480",
+                        placeName : "부산의 호텔",
+                        date : "10월 31일 ~ 11월 2일",
+                        price : "￦72,929",
+                        days :  "2박",
+                        reviewRating : "★4.92" 
+                    }
+                    
+                ]
+
+            
+                
+                let element = "";
+                for(let lod of lodging){
+                    element += `<div class="lodging">
+                                <image src="${lod.image}" />
+                                <h4>${lod.placeName}</h4>
+                                <p>${lod.date}</p>
+                                <p>${lod.price} ${lod.days} ${lod.reviewRating}</P>
+                                </div>`;
+                }
+                
+                document.getElementById("wrap").innerHTML += element;                    
+            };
+        </script>
+    </body>
+</html>

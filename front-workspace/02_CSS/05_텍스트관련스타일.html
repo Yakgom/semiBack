@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>색깔놀이</title>
+        <style>
+            #color {
+                color: cornflowerblue;
+                color: #3e0703; /* 16진수 형태 */
+                color: #03c75a; /* 네이버의 초록색 */
+                /*
+            rgb(rgb값으로)
+            rgba(숫자,숫자,숫자,투명도); 0~1 숫자가 작을수록 투명
+            hsl(색조(0~360),채도%,명도%);
+            hsla(색조,채도%,명도%,투명도);
+            */
+            }
+
+            #td1 {
+                text-decoration: underline;
+            }
+            #td2 {
+                text-decoration: overline;
+            }
+            #td3 {
+                text-decoration: line-through;
+            }
+            #anaver {
+                text-decoration: none;
+                color: rgb(50, 50, 50);
+
+                &:hover {
+                    text-decoration: underline;
+                    font-size: 17px;
+                    color: rgba(50, 50, 50, 0.4);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>텍스트 색깔놀이 하기!!!!!!!!!!!!!!!</h1>
+
+        <pre id="color">
+        [ 표현법 ]
+        
+        선택자 : {
+            color : 색상값;
+        }
+    </pre
+        >
+
+        <hr />
+
+        <h3>text-decoration : 텍스트에 줄을 긋거나 지울 때 사용</h3>
+
+        <pre>
+        [ 표현법 ]
+        선택자 {
+            text-decoration : none / underline / overline / line-through;
+        }
+    </pre
+        >
+
+        <ul>
+            <li id="td1">아래에 선 긋기</li>
+            <br />
+            <li id="td2">위에 선 긋기</li>
+            <br />
+            <li id="td3">중간에 선 긋기</li>
+            <br />
+        </ul>
+
+        <a href="http://www.naver.com" id="anaver">네이버로!</a>
+
+        <hr />
+
+        <h3>text-align : 텍스트를 정렬할 때 사용</h3>
+
+        <pre>
+        [ 표현법 ]
+        선택자 {
+            text-align: left/ right / center / justify;
+        }
+
+    </pre
+        >
+
+        <h4>
+            <p style="text-align: right">
+                좋아하는 문구 있으세요 여러분? 말씀해주세요. 조금 길게 작성하면
+                정렬이 눈에 보입니다.
+            </p>
+        </h4>
+        <h4>
+            <p style="text-align: center">
+                좋아하는 문구 있으세요 여러분? 말씀해주세요. 조금 길게 작성하면
+                정렬이 눈에 보입니다.
+            </p>
+        </h4>
+        <h4>
+            <p style="text-align: justify">
+                좋아하는 문구 있으세요 여러분? 말씀해주세요. 조금 길게 작성하면
+                정렬이 눈에 보입니다.
+            </p>
+        </h4>
+        <h4>
+            <p style="text-align: left">
+                좋아하는 문구 있으세요 여러분? 말씀해주세요. 조금 길게 작성하면
+                정렬이 눈에 보입니다.
+            </p>
+        </h4>
+
+        <hr />
+    </body>
+</html>

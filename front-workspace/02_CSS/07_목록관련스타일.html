@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목록 관련 스타일</title>
+    <style>
+        #ul1{
+            list-style: none;
+        }
+        #ul2{
+            list-style-image: url(resources/image/dog1.jpg);
+            list-style-position: inside;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>리스트</h1>
+
+    <h3>list-style-type : 불릿 기호 바꿔야겠다.</h3>
+
+    <pre>
+        [ 표현법 ]
+
+        * 순서 없는 목록(ul)
+        선택자 {
+            list-style : disc / circle / square / none;
+        }
+
+        * 순서 있는 목록(ol)
+        선택자 {
+            list-style : decimal(십진수) / lower-roman,upper-roman(로마숫자)
+            / lower-alpha,upper-alpha => 알파벳
+        }
+    </pre>
+
+
+    <ul id="ul1">
+        <li>싹</li>
+        <li>싹</li>
+        <li>쑉</li>
+    </ul>
+    <ul id="ul2">
+        <li>싺싺김치</li>
+        <li>ㅎㅇ</li>
+        <li>졸리다</li>
+    </ul>
+
+</body>
+</html>

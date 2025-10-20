@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>레이아웃잡기</title>
+        <style>
+            .container {
+                border: 3px solid rgb(58, 40, 40);
+                padding: 20px;
+                background-color: rosybrown;
+            }
+
+            .red {
+                background-color: red;
+            }
+            .blue {
+                background-color: blue;
+            }
+            .green {
+                background-color: green;
+            }
+
+            .box {
+                padding: 20px;
+                text-align: center;
+                font-weight: bold;
+                color: aliceblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>요소를 배치해보자</h1>
+
+        <pre>
+        [ 표현법 ]
+        선택자{
+            display : flex;
+        }
+        
+        flex를 적용하면 자식요소들이 가로방향으로 정렬됨
+    </pre
+        >
+
+        <div class="container" style="display: flex">
+            <div class="box red" style="flex-grow: 1">나는 1번</div>
+            <div class="box blue" style="flex-grow: 2">나는 2번</div>
+            <div class="box green" style="flex-grow: 3">나는 3번</div>
+        </div>
+
+        <hr />
+
+        <pre>
+        [ 표현법 ]
+
+        선택자{
+            flex-direction: column;
+        }
+
+        요소들을 다시 세로방향으로 쌓을 수 있음
+    </pre
+        >
+        <div class="container" style="display: flex; flex-direction: column">
+            <div class="box red">나는 1번</div>
+            <div class="box blue">나는 2번</div>
+            <div class="box green">나는 3번</div>
+        </div>
+
+        <hr />
+
+        <pre>
+        가로 정렬하기
+        justify-content > 
+        flex-start : 왼쪽정렬
+        center : 중앙정렬
+        flex-end : 오른쪽정렬
+        space-around : 요소들을 사이사이에 동일한 공간 배분
+        space-evenly : 모든 간격을 동일하게 
+    </pre
+        >
+        <div
+            class="container"
+            style="display: flex; justify-content: space-evenly">
+            <div class="box red">나는 1번</div>
+            <div class="box blue">나는 2번</div>
+            <div class="box green">나는 3번</div>
+        </div>
+
+        <hr />
+        <pre>
+        세로정렬
+        align-items
+        stretch : 부모요소 높이에 맞춤(기본값)
+        baseline : 텍스트에 맞춤
+    </pre
+        >
+        <div
+            class="container"
+                            style="display: flex; 
+                            justify-content: center;
+                            height: 300px;
+                            align-items: center;">
+            <div class="box red" style="order : 3">나는 1번</div>
+            <div class="box blue" style="order : 1;">나는 2번</div>
+            <div class="box green" style="order : 2;">나는 3번</div>
+            <div class="box red">추가</div>
+        </div>
+    </body>
+</html>

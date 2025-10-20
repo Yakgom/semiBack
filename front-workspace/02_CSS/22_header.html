@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* header 영역 css ----------------------------*/
+            header {
+                flex: 1;
+                display: flex;
+                width: 100%;
+                width: 1350px;
+                height: 120px;
+            }
+            /* 헤더 왼쪽 */
+            #header-left {
+                flex: 1.5;
+            }
+            #left_1 {
+                height: 100%;
+                position: relative;
+            }
+            #left_1 img {
+                width: 60px;
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+            }
+            #left_1 p {
+                position: absolute;
+                left: 80px;
+                bottom: 0px;
+                font-size: 30px;
+                font-family: "Story Script", sans-serif;
+                font-weight: 800;
+            }
+            /* 헤더 오른쪽 */
+            #header-list {
+                height: 100%;
+                position: relative;
+            }
+            #header-list ul {
+                list-style: none;
+                display: flex;
+                width: 100%;
+                padding: 0px;
+                justify-content: space-around;
+                position: absolute;
+                bottom: 30px;
+            }
+            #header-list li {
+                color: gray;
+            }
+            #header-list a {
+                text-decoration: none;
+                margin-left: 5px;
+                margin-right: 5px;
+                color: skyblue;
+
+                &:hover {
+                    color: purple;
+                }
+            }
+            #hlist-pipe {
+                color: rgb(160, 187, 141);
+                font-weight: 800;
+            }
+            #header-middle {
+                display: flex;
+                flex-direction: column;
+                height: 200px;
+            }
+
+            #middle-content {
+                margin-top: auto;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            #header-right {
+                flex: 2.5;
+            }
+            /* 헤더 가운데 */
+            #search-form {
+                display: flex;
+                height: 50px;
+            }
+            #search-form input,
+            select,
+            button {
+                height: 50px; /* 통일된 높이 */
+                font-size: 16px; /* 글자 크기도 통일 */
+                padding: 0 10px; /* 좌우 여백 */
+                border: 1px solid #ccc;
+                box-sizing: border-box; /* padding+border 포함해서 계산 */
+                vertical-align: middle;
+            }
+
+            #search-location input[type="text"] {
+                width: 300px;
+                padding: 0;
+                border-radius: 10px 0px 0px 10px;
+            }
+            #summbit-btn button{
+                width:70px;
+            }
+           
+            #btn-image img{
+                width: 15px;
+                height: 15px;
+            }
+            #summbit-btn button{
+                background-color: rgb(220, 245, 235);
+            }
+          
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="header-left">
+                <div id="left_1">
+                    <img
+                        src="resources/image/web-20180203004207333697-1560x1625.png"
+                        alt="대한민국지도모양"
+                    />
+                    <p>Meokja</p>
+                </div>
+            </div>
+            <div id="header-middle">
+                <div id="middle-content">
+                    <form action="search" method="get" id="search-form">
+                        <div id="search-location">
+                            <input
+                                type="text"
+                                list="location-input"
+                                name="location"
+                                placeholder="지역으로 검색"
+                            />
+                            <datalist id="location-input">
+                                <option value="Seoul">서울</option>
+                                <option value="Gyeonggi">경기</option>
+                                <option value="Busan">부산</option>
+                            </datalist>
+                        </div>
+                        <div id="search-date">
+                            <input type="date" name="date" id="date-input" />
+                        </div>
+                        <div id="search-time">
+                            <input type="time" name="time" id="time-input" />
+                        </div>
+                        <div id="search-people">
+                            <select name="people" id="">
+                                <option value="1">1명</option>
+                                <option value="2">2명</option>
+                                <option value="3">3명</option>
+                                <option value="4">4명</option>
+                                <option value="5">5명</option>
+                            </select>
+                        </div>
+                        <div id="summbit-btn">
+                            <button type="submit">
+                                <div id="btn-image">
+                                    <img src="resources/image/1093183.png" alt="">
+                   
+                                </div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="header-right">
+                <div id="header-list">
+                    <ul>
+                        <li><a href="22_화면만들기/en.html">English</a></li>
+                        <span id="hlist-pipe">|</span>
+                        <li><a href="22_화면만들기.html">한국어</a></li>
+                        <span id="hlist-pipe">|</span>
+                        <li><a href="22_화면만들기/jp.html">日本語</a></li>
+                        <span id="hlist-pipe">|</span>
+                        <li><a href="22_화면만들기/cn.html">中文</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </body>
+</html>

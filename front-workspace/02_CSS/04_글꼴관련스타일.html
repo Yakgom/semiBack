@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>글꼴을 변경 해보자</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap"
+            rel="stylesheet" />
+        <style>
+            /* font-family 스타일 적용*/
+            #ff1 {
+                font-family: 궁서체;
+            }
+            #ff2 {
+                font-family: 돋움체;
+            }
+            #ff3 {
+                font-family: 흐에;
+            }
+
+            * {
+                font-family: "Black And White Picture", system-ui;
+                font-weight: 400;
+                font-style: normal;
+                color: cornflowerblue;
+            }
+
+            #fs1 {
+                font-size: 22px;
+            }
+            #fs2 {
+                font-size: 3em;
+            }
+            #fs3 {
+                font-size: 250%;
+            }
+            #fw1 {
+                font-weight: bold;
+            }
+            #fw2 {
+                font-weight: bolder;
+            }
+            #fw3 {
+                font-weight: lighter;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>글꼴 관련 스타일 속성</h1>
+
+        <h3>font-family : 글꼴을 지정할 때 사용</h3>
+
+        <pre>
+        [ 표현법 ]
+        선택자 {
+            font-family : 바꾸고싶은글꼴명;
+        }
+
+
+    </pre
+        >
+
+        <p id="ff1">글꼴테스트1</p>
+        <p id="ff2">글꼴테스트2</p>
+        <p id="ff3">글꼴테스트3</p>
+
+        <h2>* 외부 웹 폰트 사용법</h2>
+
+        <p>
+            웹 폰트 제공 사이트
+            <a href="http://fonts.google.com" target="_blank">구글 웹폰트</a>
+        </p>
+
+        <hr />
+
+        <h3>font-size : 글꼴의 크기를 조절할 때 사용</h3>
+
+        <pre>
+            [ 표현법 ]
+
+            선택자 {
+                font-size : 크기에 해당하는 숫자(단위 : px / em / %);
+            }
+
+        </pre>
+
+        <ul>
+            <li id="fs1">사이즈테스트</li>
+            <li id="fs2">사이즈테스트</li>
+            <li id="fs3">사이즈테스트</li>
+        </ul>
+
+        <hr />
+
+        <h3>font-weight : 글꼴의 두께를 표현할 때 사용</h3>
+        <pre>
+            [ 표현법 ]
+            선택자 {
+                font-weight : normal / bold / bolder / lighter
+                / 100 ~ 900
+            }
+        </pre>
+
+        <ul>
+            <li id="fw1">굵은 글꼴로 변경</li>
+            <li id="fw2">원래 굵기보다 더 굵게</li>
+            <li id="fw3">원래 굵기보다 더 얇게</li>
+        </ul>
+
+        <hr />
+
+        <h3>font-style : 기울이고싶을 때 사용</h3>
+
+        <pre>
+        [ 표현법 ]
+        선택자 {
+            font-style : normal / italic / oblique;
+        }
+        -> italic : 기울임 글꼴 , oblique : 원래 폰트를 기울임(폰트에 만들어 놨으면 쓸수있음)
+        </pre
+        >
+
+        <ul>
+            <li style="font-style: itailc">italic</li>
+            <li style="font-style: oblique">oblique</li>
+        </ul>
+
+        
+    </body>
+</html>

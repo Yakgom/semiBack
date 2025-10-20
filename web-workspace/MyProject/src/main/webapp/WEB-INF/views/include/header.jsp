@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<header class="masthead" style="background-image: url('resources/assets/img/librarypic.webp')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>ㅎㅇ</h1>
+                            <span class="subheading">Hi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>요거 잘 들어둬야 고생안함</title>
+        <style>
+            .test {
+                width: 100px;
+                height: 100px;
+                background-color: powderblue;
+                border: 10px solid palegreen;
+            }
+            #test1{
+                padding: 100px;
+            }
+            #test2{
+                padding:50px 20px;
+            }
+            #test3{
+                padding: 50px 20px 10px 0;
+            }
+            #test4{
+                margin: 50px;
+            }
+            #test5{
+                margin-top: -150px;
+            }
+            #test6{
+                /*
+                margin-left: auto;
+                margin-right: auto;
+                */
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>이거 모르면 고생</h1>
+
+        <br />
+        <br />
+
+        <span>안녕 나는 스팬이야</span>
+        <br />
+        <span>안녕 나는 스팬2야</span>
+
+        <h2 style="border: 1px solid cornflowerblue">
+            여백 및 간격 관련 스타일
+        </h2>
+        <div style="border: 1px solid black">기준 div</div>
+
+        <p>
+            요소의 영역 구분 (바깥쪽에서 안쪽으로)
+            <br />
+            <br />
+            <br />
+            margin : 요소의 바깥쪽 여백 영역
+            <br />
+            border : 테두리 영역
+            <br />
+            padding : 내용물영역과 테두리 영역 사이의 거리(안쪽여백)
+            <br />
+            content : 실제 내용물이 들어가는 영역
+            <br />
+
+            실제 요소가 차지하는 크기(영역) == content + padding + border
+        </p>
+
+        <div class="test">하이</div>
+        <div class="test">바이</div>
+
+        <p>
+            padding
+            <br />
+            내용물영역(content)과 테두리영역(border)사이의 거리(여백)을 조절하는
+            속성
+        </p>
+
+        <div id="test1" class="test">컨텐트 영역</div>
+        <p>padding : 100px</p>
+        <div id="test2" class="test">컨텐트 영역</div>
+        <p>padding: 50px 20px</p>
+        <div id="test3" class="test">컨텐트 영역</div>
+        <p>padding: 50px 20px 10px 0</p>
+
+        <hr>
+
+        <h3>margin(요소의 바깥쪽 여백)</h3>
+
+        <p>
+            요소들의 간격을 조정할 때 사용 <br>
+            실제 요소의 영역에는 포함 XXXXX
+        </p>
+
+        <div id="test4" class="test">안녕 나는 div요소야</div>
+        <p>margin:50px</p>
+
+        <div id="test5" class="test">요렇게도 해보자</div>
+        <p>margin-top : -150px </p>
+
+        <div id="test6" class="test">하나 더 알려드립니다
+        <p>margin : auto</p>    
+        </div>
+        <hr />
+    </body>
+</html>

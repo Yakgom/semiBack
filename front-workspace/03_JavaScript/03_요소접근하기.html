@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>여섯가지방법</title>
+        <style>
+            .area {
+                width: 350px;
+                height: 150px;
+                border: 1px solid lavenderblush;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>HTML요소 접근해봅시다</h1>
+
+        <h3>1) 아이디 속성값을 이용해서 접근하기</h3>
+
+        <div id="area1" class="area"></div>
+        <button onclick="selectById();">아이디로 접근하기</button>
+
+        <script>
+            function selectById() {
+                //아이디 속성값을 이용해서 요소에 접근!
+                //console.log(document);
+                //document.getElementById('접근할 요소의 아이디 속성값');
+                // 요소객체라고 부른다.
+                const area1 = document.getElementById("area1");
+                console.log(area1);
+                console.dir(area1);
+
+                // property(속성) : value(값)
+                // 속성값 get / 속성값 set
+                // 속성에 접근하는 방법? ==> 선택된요소객체.속성명
+
+                console.log(area1.id);
+
+                area1.innerHTML = "아이디로 접근성공! <br>"; // set하기
+                console.log(area1.innerHTML); // get하기
+
+                // 선택된 div요소의 style속성을 변경
+                area1.style.backgroundColor = "steelblue";
+                area1.style.color = "skyblue";
+
+                // 개발자도구로 확인 시 인라인 방식으로 스타일이 부여된 것을 확인
+            }
+        </script>
+
+        <br /><br /><br />
+
+        <hr />
+
+        <div
+            class="area"
+            style="background-color: yellowgreen"
+            id="area2"
+        ></div>
+
+        <button id="btn1">다음 시간은 실습시간</button>
+
+        <!--
+            버튼을 클릭할 때 마다
+            div요서 색상이 변경되도록
+            일곱빛깔 돌리기
+        -->
+
+        <script>
+            let value = 0;
+
+            document.querySelector("#btn1").onclick = function () {
+                const area2 = document.querySelector("#area2");
+
+                console.log(area2);
+
+                if (value == 0) {
+                    // 변수 안쓰고 area2.style.backgroundColor == "yellowgreen" 으로 접근도 가능함
+                    area2.style.backgroundColor = "red";
+                    value++;
+                } else if (value == 1) {
+                    area2.style.backgroundColor = "orange";
+                    value++;
+                } else if (value == 2) {
+                    area2.style.backgroundColor = "yellow";
+                    value++;
+                } else if (value == 3) {
+                    area2.style.backgroundColor = "green";
+                    value++;
+                } else if (value == 4) {
+                    area2.style.backgroundColor = "blue";
+                    value++;
+                } else if (value == 5) {
+                    area2.style.backgroundColor = "darkblue";
+                    value++;
+                } else if (value == 6) {
+                    area2.style.backgroundColor = "purple";
+                    value++;
+                } else if (value == 7) {
+                    value = 0;
+                    area2.style.backgroundColor = "red";
+                }
+            };
+        </script>
+
+        <hr />
+
+        <h3>2) 태그명으로 접근하는 방법</h3>
+
+        <ul>
+            <li>목록1</li>
+            <li>목록2</li>
+            <li>목록3</li>
+            <li>목록4</li>
+            <li>목록5</li>
+        </ul>
+
+        <button onclick="tag()">태그명으로 접근하기</button>
+
+        <script>
+            function tag() {
+                // document.getElementsByTagName('태그명');
+
+                const array = document.getElementsByTagName("li");
+                console.log(array);
+                console.log(array.length);
+                // 선택된 여러 개의 요소객체들이 배열 형태로 담겨서 반환
+                // 자바스크립트에서의 배열은 [] 로 표현
+                array[0].style.background = "red";
+                array[1].style.backgroundColor = "blue";
+
+                let redColor = 100;
+
+                for (let i = 0; i < array.length; i++) {
+                    array[i].style.backgroundColor = `rgb(${redColor},180,180)`;
+                    redColor += 30;
+                }
+            }
+        </script>
+
+        <hr />
+
+        <h3>3) name 속성값으로 요소객체 접근해보기</h3>
+
+        <form action="요청받아줄서버" method="get">
+            <fieldset>
+                <legend>메뉴</legend>
+                <input
+                    type="checkbox"
+                    name="menu"
+                    id=""
+                    value="아메리카노"
+                />아메리카노
+                <input
+                    type="checkbox"
+                    name="menu"
+                    id=""
+                    value="콜드브루"
+                />콜드브루
+                <input type="checkbox" name="menu" id="" value="라떼" />카페라떼
+                <input
+                    type="checkbox"
+                    name="menu"
+                    id=""
+                    value="딸기라떼"
+                />딸기라떼
+                <input
+                    type="checkbox"
+                    name="menu"
+                    id=""
+                    value="말차라떼"
+                />말차라떼
+                <br />
+                <button type="submit">버튼</button>
+            </fieldset>
+        </form>
+
+        <button id="menu-btn">버튼버튼이예용</button>
+
+        <script>
+            const btnEl = document.querySelector("#menu-btn");
+
+            btnEl.addEventListener("click", function () {
+                // name속성값을 이용해서 요소객체들 접근하기
+                // document.getElementsByName('name속성값');
+
+                const menus = document.getElementsByName("menu");
+
+                console.log(menus);
+
+                var content = "";
+
+                for (let i = 0; i < menus.length; i++) {
+                    if (menus[i].checked) {
+                        alert(
+                            "선택하신 메뉴는 : " + menus[i].value + "입니다."
+                        );
+                    }
+                }
+                for (const menu of menus) {
+                    if (menu.checked) {
+                        content += `선택하신 메뉴는 : ${menu.value} 입니다 \n`;
+                    }
+                }
+                alert(content);
+
+                Array.from(menus).forEach((e) => {
+                    if (e.checked) {
+                        alert(e.value);
+                    }
+                });
+
+                console.log("a");
+                console.log("b" + "a" + "a" + "a");
+
+                // 자바스크립트의 논리값
+
+                // 자바의 논리값 == true/false
+
+                // 자바스크립트는 모든 값이 논리값으로 쓰일 수 있음
+                // true / false
+                // 1,2,3,4,5,'A','B','C'
+                // Falsy
+                // 0 , 0.0 , '' ,"",null,undefined,NaN 빼고 나머지는 true
+            });
+        </script>
+
+        <hr />
+
+        <h4>4) 클래스 속성명으로 요소객체들 접근하기</h4>
+
+        <div class="test"></div>
+        <p class="test"></p>
+        <ul class="test">
+            <li>
+                <pre class="test"></pre>
+            </li>
+            <li>
+                <pre class="test"></pre>
+            </li>
+            <li>
+                <pre class="test"></pre>
+            </li>
+        </ul>
+
+        <button onclick="accessClass();">class속성으로 선택하기</button>
+
+        <script>
+            function accessClass() {
+                // document.getElementsByClassName('클래스 속성값');
+
+                console.log(document.getElementsByClassName("test"));
+
+                const tests = document.querySelectorAll(".test");
+
+                console.log(tests);
+
+                
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div,main,header,footer {
+                border: 1px solid red;
+                box-sizing: border-box;
+            }
+            #wrap {
+                width: 1000px;
+                height: 800px;
+                margin: auto;
+                border: 1px solid red;
+                display: flex;
+                /*세로로 배치하기*/
+                flex-direction: column;
+            }
+            header {
+                flex: 2;
+            }
+            main {
+                flex: 6;
+                display: flex;
+            }
+            #content_1{
+                flex: 7;
+            }
+            #content_2{
+                flex: 3;
+            }
+            footer {
+                flex: 2;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header></header>
+            <main>
+                <div id="content_1"></div>
+                <div id="content_2"></div>
+            </main>
+            <footer></footer>
+        </div>
+    </body>
+</html>

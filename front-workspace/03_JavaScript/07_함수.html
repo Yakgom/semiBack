@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>함수를 씁시다</title>
+        <style>
+            .area {
+                width: 500px;
+                height: 200px;
+                border: 1px solid tomato;
+                background-color: salmon;
+            }
+        </style>
+    </head>
+    <body>
+        <p>2차 민생 쿠폰 지급받으셈 ㅋ 밑에꺼 누르셈 ㅋ</p>
+        <a href="http://www.google.com">www.naver.com</a>
+        <hr />
+
+        <h1>함수! (function)</h1>
+
+        <!-- 
+            1. 선언적함수 : 식별자가 달려있는 함수, 식별자를 호출해서 실행
+
+            2. 익명함수 : 이름이 없음, 속성에 함수를 대입해서 구현
+
+        -->
+
+        <h3>선언적함수</h3>
+
+        <pre>
+            [ 표현법 ]
+
+            function 함수명(매개변수,매개변수){
+                함수를 호출했을 때 실행할코드;
+
+                return 결과값;
+            }
+
+            - 매개변수가 없는 경우 생략 가능
+            - 반환할 결과값이 없는 경우 return 생략 가능
+        </pre>
+
+        <div id="area" class="area" onclick="firstFn();"></div>
+
+        <script>
+            function firstFn() {
+                /*코드의 재사용 + 함수식별자를 이용해서 의미를 전달*/
+                document.getElementById("area").innerHTML = "함수호출";
+                //alert("하이");
+            }
+        </script>
+
+        <hr />
+
+        <h3>* 익명함수</h3>
+
+        <pre>
+            [ 표현법 ]
+
+            변수 / 속성 = () => {
+
+                소스코드가 어쩌고 저쩌고 
+
+            }
+
+            => 주로 이벤트 핸들러 작성 시 사용
+        </pre>
+
+        <button id="btn">하잉</button>
+        <div id="area2" class="area"></div>
+
+        <script>
+            const btnEl = document.querySelector("#btn");
+            // 버튼을 클릭했을 때 수행하고 싶은 코드들
+            // 버튼요소에 클릭 이벤트가 발생했을 때 요걸 하고싶음
+            // 특정 이벤트 발생 시 동작시킬 코드 뭉치 == 이벤트 핸들러
+            btnEl.addEventListener("click", () => {
+                document.getElementById("area2").innerHTML = "함수호출";
+            });
+        </script>
+
+        <hr />
+
+        <h3>함수의 매개변수</h3>
+
+        <br />
+
+        <button onclick="parameterFn('༼ つ ◕_◕ ༽つ')">string전달</button>
+        <button onclick="parameterFn(100)">number전달</button>
+        <button onclick="parameterFn([1,2,3])">array전달</button>
+        <button onclick="parameterFn(prompt('이름?'))">function전달</button>
+        <!-- 자료형과는 무관함 인자값의 개수와 매개변수의 개수만 동일하다면
+            어떤 형태의 값이든 전달 가능-->
+        <button onclick="parameterFn()">전달無</button>
+        <!-- 실행에는 문제가 없음 / 단, undefined가 대입 -->
+        <button onclick="parameterFn(1,2)">매개변수값보다 많이 전달</button>
+        <!-- 실행에는 문제가 없음 / 단 , 초과된 전달값은 사라짐 -->
+        <div id="area3" class="area"></div>
+
+        <script>
+            function parameterFn(value) {
+                // 매개변수 작성 시 자료형을 지정하지 않음, var / let키워드 사용x
+                // 오로지 변수명만 작성
+                console.log(value);
+                document.getElementById("area3").innerHTML = value;
+            }
+        </script>
+
+        <hr />
+
+        <button onclick="test(10,30,50,60,70,80,90,100,760);">나는 버튼</button>
+
+        <button onclick="test(10,30,20,50)">나도 버튼</button>
+
+        <button onclick="test(2)">버튼 삼형제</button>
+        <script>
+            function test(...nums) {
+                // 여러명이 작업할때 권장
+
+                //console.log(arguments);
+                // 함수 호출 시 전달하는 인자값은 내부적으로 arguments 라는 배열에 담김
+                // * arguments : 모든 함수마다 내부적으로 하나씩 존재함
+
+                console.log(nums);
+            }
+        </script>
+
+        <hr />
+
+        <h3>매개변수로 this키워드 전달해보기(선억적함수 ver)</h3>
+
+        <button onclick="change(this);" id="btn1">내가 누구게?</button><br />
+        <button onclick="change(this);" id="btn2">내가 누구게?</button>
+
+        <script>
+            // ver 0.1
+            // function changeColor(){
+            //     document.querySelector("#btn1").style.color = "orangered";
+            // }
+            // function changeColor2(){
+            //     document.querySelector("#btn2").style.color = "orangered";
+            // }
+
+            // ver 0.2
+            // function changeColor(value){
+            //     if(value===1){
+            //         document.getElementById("btn1").style.color = 'orangered';
+            //     }else{
+            //         document.getElementById("btn2").style.color = 'orangered';
+            //     };
+            // }
+
+            // ver 0.3
+            // function change(value){
+            //     document.getElementById(`btn${value}`).style.color = "orangered";
+            // }
+
+            function change(value) {
+                //console.log(value);
+                value.style.color = "orangered";
+            }
+        </script>
+
+        <hr />
+
+        <h2>함수의 반환</h2>
+
+        <button onclick="random();">실행하기</button>
+        <div class="area" id="area6"></div>
+
+        <script>
+            // const random = ParseInt(Math.random() * 10)+1;
+
+            function generateNum() {
+                const num = parseInt(Math.random() * 10) + 1;
+
+                return function naming(name) {
+                    return `${name}님의 랜덤한 숫자 : ${num}`;
+                };
+            }
+            // 클로저(Closure) : 외부 함수 실행이 끝나더라도
+            // 반환한 내부 함수를 통해서 외부 함수 내 변수를 사용할 수 있도록
+            // 하는 기술
+            function random() {
+                const naming = generateNum();
+                console.log(naming);
+                document.getElementById("area6").innerHTML = naming("홍길동");
+            }
+        </script>
+
+        <hr />
+
+        <h3>* 익명함수를 반환하는 경우</h3>
+
+        <button onclick="testFn()();">극단적인코드</button>
+        <!--  ()() 두개면 함수호출후 return 값 익명함수 호출 -->
+        <script>
+            function testFn() {
+                return function () {
+                    alert("날불렀니?");
+                };
+            }
+        </script>
+    </body>
+</html>

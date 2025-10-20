@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면 구조잡기 2</title>
+    <style>
+        div {
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+
+        #wrap{
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+
+            display: flex;
+            flex-direction: column;
+        }
+        header{
+            flex:3;
+        }
+        main{
+            flex:4;
+        }
+        footer{
+            flex:4;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <main></main>
+        <footer></footer>
+    </div>
+</body>
+</html>

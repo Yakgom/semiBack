@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>화면 구조잡기 연습해야지</title>
+        <style>
+            div, header , main , footer{
+                border:1px solid red;
+                box-sizing: border-box;
+            }
+            #wrap{
+                width: 1000px;
+                height: 800px;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+            }
+            header{
+                display: flex;
+                flex:2;
+            }
+            #header_1{
+                flex:3;
+            }
+            #header_2{
+                flex: 5;
+            }
+            #header_3{
+                flex:2;
+            }
+            main{
+                flex: 6;
+                display: flex;
+            }
+            #content_1{
+                flex:1.5;
+            }
+            #content_2{
+                flex:5;
+            }
+            #content_3{
+                flex:3.5;
+            }
+            footer{
+                flex:2;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <div id="header_1"></div>
+                <div id="header_2"></div>
+                <div id="header_3"></div>
+            </header>
+            <main>
+                <div id="content_1"></div>
+                <div id="content_2"></div>
+                <div id="content_3"></div>
+            </main>
+            <footer></footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>써보자편</title>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            div{
+                box-sizing: border-box;
+            }
+            #wrap {
+                width: 1200px;
+                height: 500px;
+                margin: auto;
+                box-shadow: 1px 1px 1px lightgray;
+            }
+
+            .card{
+                width: 180px;
+                height: 360px;
+                padding-bottom: 20px;
+                display: inline-block;
+
+                &:hover{
+                    box-shadow: 1px 2px 4px lightgray;
+                }
+            }
+
+            .card > img{
+                width: 230px;
+                height: 360px;
+            }
+            .card > h4{
+                font-size: 18px;
+                font-weight: 800;
+
+            }
+            .card > p {
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .area{
+                background-color: lemonchiffon;
+                border: 1px solid blanchedalmond;
+                height: 300px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <h1>배열과 객체의 활용</h1>
+
+        <h3>* 객체 배열 써보기</h3>
+
+        <!-- 느낌만 보기 -->
+
+        <div id="wrap"></div>
+
+        <script>
+            window.onload = function () {
+                //컨트롤러로 요청을 보냄~
+                function 요청보내는함수() {
+                    //얼씨구절씨구
+                }
+                요청보내는함수();
+
+                // 컨트롤러가 반환해주는 응답데이터라고 가정
+                const webtoons = [
+                    {
+                        image: "https://image-comic.pstatic.net/webtoon/842620/thumbnail/thumbnail_IMAG21_44eb7809-90e1-46da-a0ec-1ead08a8e9e9.jpg",
+                        title: "해골전령이야기",
+                        author: "kain_y /소라게",
+                    },
+                    {
+                        image: "https://image-comic.pstatic.net/webtoon/807178/thumbnail/thumbnail_IMAG21_28fcfb22-aae7-41b4-8767-05f6dd176b03.jpg",
+                        title: "캐슬 2:만인지상",
+                        author: "정연 / 박만사",
+                    },
+                    {
+                        image: "https://image-comic.pstatic.net/webtoon/642598/thumbnail/thumbnail_IMAG21_c784c8b0-c6d3-46ca-9a02-d3c4c04a8c83.jpg",
+                        title: "조선왕조실톡",
+                        author: "무적핑크",
+                    },
+                    {
+                        image: "https://image-comic.pstatic.net/webtoon/747269/thumbnail/thumbnail_IMAG21_aabd9952-ff45-47a2-a543-33f19a5c6708.jpg",
+                        title: "전지적 독자 시점",
+                        author: "UMI / 슬리피-C / 싱숑",
+                    },
+                    {
+                        image: "https://image-comic.pstatic.net/webtoon/838002/thumbnail/thumbnail_IMAG21_aee939b2-2d3c-445f-a7d8-82414f4f9482.jpg",
+                        title: "종말이 찾아왔다",
+                        author: "전선욱",
+                    },
+                ];
+
+                console.log(webtoons);
+
+                //const skeleton = webtoons[0];
+
+                // console.log(skeleton);
+                /*
+                const webtoon1 = `<div class = "card">
+                                    <image src="${skeleton.image}" />
+                                    <h4>${skeleton.title}</h4>
+                                    <p>${skeleton.author}</p>
+                                    </div>`;
+                */
+                
+                let element = "";
+                for(let webtoon of webtoons){
+                    element += `<div class="card">
+                                <image src="${webtoon.image}" />
+                                <h4>${webtoon.title}</h4>
+                                <p>${webtoon.author}</p>
+                                </div>`;
+                }
+                
+                document.getElementById("wrap").innerHTML = element;                    
+            };
+        </script>
+
+        <hr>
+
+        <h3>* 생성자 함수</h3>
+
+        <p>new 키워드를 사용해서 객체를 생성할 수 있는 함수를 의미</p>
+
+        <button onclick="con();">실행</button>
+
+        
+
+        <script>
+            function con(){
+                // 웹툰 객체를 만들고 싶음
+                // 썸네일 , 제목 , 작가명
+                const webtoon1 = {
+                    image : "",
+                    title : "",
+                    author : "",
+                };
+
+                const webtoon2 = new Webtoon("이미지경로","재밌는웹툰","이승철");
+                const webtoon3 = new Webtoon("하하","호호","하하");
+
+                // 생성자 함수 정의(선언할 때 첫 글자를 대문자로 만들면됨)
+                function Webtoon(image,title,author){
+                    this.image = image;
+                    this.title = title;
+                    this.author = author;
+                };
+
+                console.log(webtoon2);
+                console.log(webtoon3);
+            }
+        </script>
+
+        <hr>
+
+        <h3>* Date 객체</h3>
+        <button onclick="dateFn();">날짜날짜 사용</button>
+        <div id="area1" class="area"></div>
+
+        <script>
+            function dateFn(){
+                
+                const area = document.getElementById("area1");
+
+                // Date객체 
+                const date1 = new Date();
+                area.innerHTML = `현재 날짜 및 시간 :  ${date1} <br>`;
+
+                // 2026년 2월 12일 세팅
+                const date2 = new Date(2026,2-1,12);
+                area.innerHTML += `종강일 : ${date2} <br>`;
+                // 월의 경우 인덱스를 의미하기 때문에 해당 월에 -1을 해줘야함
+
+                // 2026년 2월 12일 17시 50분으로 세팅
+                const date3 = new Date(2026,2-1,12,17,50,0);
+                area.innerHTML += `종갈일 시간 : ${date3} <br>`;
+
+                // ms까지 세팅
+                // 1s == 1000ms
+                const date4 = new Date(2026,2-1,12,17,50,0,5000);
+                area.innerHTML += `찐 종강일 : ${date4} <br>`;
+
+                // 종갈일까지 디데이 구하기
+                const endDay = new Date(2026,2-1,12);
+                const today = new Date();
+                area.innerHTML += `종강일까지 디데이 : ${endDay - today} <br>`;
+
+                //일자 단위로 바꿔주자
+                // MS ==> Day
+                // 1s == 1000ms
+                // 1m == 60s * 1000ms
+                // 1h == 60m == 60 * 60s == 60 * 60 * 1000ms
+                // 1day == 24h == 24 * 60m == 24 * 60 * 60s == 24 * 60 * 60 * 1000ms;
+                const dDay = (endDay-today) / (24*60*60*1000);
+                area.innerHTML += `종강까지 디데이 : ${Math.ceil(dDay)} 일 남았습니다 <br>`;
+
+                // 날짜에서 특정 데이터만 뽑고싶다.
+
+                area.innerHTML += `${date1.getFullYear()}<br>
+                                    ${date1.getMonth()+1}<br>
+                                    ${date1.getDate()}<br>
+                                    ${date1.getHours()}<br>
+                                    ${date1.getMinutes()}<br>
+                                    ${date1.getSeconds()}<br>`;
+
+                // 요일만 알아보고 싶다 : getDay();
+                // 0 == 일요일, 1 == 월, 2 == 화 , ... 6 == 토요일
+                area.innerHTML += `${date1.getDay()}`;
+            }
+        </script>
+    </body>
+</html>

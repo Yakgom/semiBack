@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3번이다 3번</title>
+    <style>
+        body{
+            background-color: rgba(0, 0, 0, 0.74);
+            color: white;
+        }
+
+        .vis-test{
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+        }
+
+        #vis1{
+            background: red;
+        }
+        #vis2{
+            background: orange;
+           /* visibility: hidden; 안보임! 공간을 차지함 */ 
+            display: none; /* 안보임! 공간도 차지안함 */
+        }
+        #vis3{
+            background: green;
+        }
+        #sinholight{
+            border:1px solid white;
+            width: 150px;
+        }
+        .outer{
+            border : 1px solid white;
+            position: relative; /* 얘가 이제 자식요소들의 기준점 */
+
+            /*
+                1단계 : 기준이 될 요소에 position : relative;
+                2단계 : 이동시킬 요소에 position: absolute;
+                3단계 : 이동시킬 요소를 얼마나 이동할건지 기술
+            */
+        }
+
+        .position{
+            border: 1px solid yellow;
+            
+        }
+
+        #p-1{
+            width: 300px;
+            height: 300px;
+            background: aqua;
+        }
+        #p-2{
+            width: 200px;
+            height: 200px;
+            background: aquamarine;
+            position: absolute; /* 기준점을 기준으로 배치하겠음 */
+            top: 50px;
+            left: 70px;
+            transform: rotate(10deg);
+        }
+        #p-3{
+            width: 100px;
+            height: 100px;
+            background: dodgerblue;
+            position: absolute;
+            top: 100px;
+            left: 30px;
+            transform: rotate(-10deg);
+        }
+        #lg{
+            position : fixed;
+            top : 20px;
+            right: 70px;
+            width: 200px;
+            height: 600px;
+            background: lightpink;
+        }
+
+        .z-test{
+            width: 150px;
+            height: 150px;
+            border: 1px solid white;
+            position: absolute;
+        }
+        
+        #z-1{
+            background: lightgoldenrodyellow;
+            top:100px;
+            left: 100px;
+            z-index: 1;
+        }
+
+        #z-2{
+            background: palegoldenrod;
+            top:50px;
+            left: 50px;
+            z-index: 20000000;
+        }
+        #z-3{
+            background: goldenrod;
+        }
+
+        .float-test{
+            width: 100px;
+            height: 100px;
+            border:1px solid white;
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>배치 관련 스타일</h1>
+
+    <h3>visibility</h3>
+    <div id="sinholight">
+    <div class="vis-test" id="vis1"></div>
+    <div class="vis-test" id="vis2"></div>
+    <div class="vis-test" id="vis3"></div>
+</div>
+
+<hr>
+
+<h3>position : 절대위치와 상대위치</h3>
+
+<div class="outer">
+    <div class="position" id="p-1">1번 요소</div>
+    <div class="position" id="p-2">2번 요소</div>
+    <div class="position" id="p-3">3번 요소</div>
+</div>
+
+<div id="lg">나를 따라와</div>
+
+<hr>
+
+<h3>z-index</h3>
+
+<p>
+    페이지안에 요소들을 위로 쌓는 속성
+</p>
+
+<div class="outer">
+    <div class="z-test" id="z-1">요소1</div>
+    <div class="z-test" id="z-2">요소2</div>
+    <div class="z-test" id="z-3">요소3</div>
+</div>
+
+<br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+
+
+
+<h3>float</h3>
+
+<p>
+    페이지 내의 요소를 화면으로부터 띄워서 왼쪽
+    오른쪽으로 배치할 수 있는 속성
+</p>
+
+<div class="float-test">1</div>
+<div class="float-test">2</div>
+<div class="float-test">3</div>
+<div class="float-test">4</div>
+<div class="float-test">5</div>
+
+<br clear="both">
+
+<div>안녕하세요</div>
+
+</body>
+</html>

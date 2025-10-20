@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>웹페이지에 이미지를 넣어볼게요</title>
+        <style>
+            #gorani:hover {
+                cursor: pointer;
+                transition: tranform 2000ms ease-in-out;
+                transform: scale(2, 2);
+            }
+        </style>
+    </head>
+    <body>
+        <h2>이미지 관련 태그</h2>
+
+        <!-- 
+        <img src="이미지의 경로(필수)" alt="이미지 설명"
+        width="이미지의 가로길이" height="이미지의 세로길이" />
+        -->
+
+        <h3>src속성 , alt속성</h3>
+        <img
+            src="https://cdn.newspenguin.com/news/photo/202001/317_1641_1348.png"
+            alt="고라니"
+            width="500"
+            height="500"
+            id="gorani"
+        />
+
+        <img src="resources/image/dog1.jpg" alt="강아지" />
+        <p>
+            * alt <br />
+            - 사진의 경로가 존재하지 않거나 표현할 수 없는경우 대체 텍스트
+            <br />
+            - 스크린리더(화면낭독기)에서 이미지를 읽어주는 설명문기 <br />
+
+            웹접근성 => 사용자의 신체적 , 지역 , 나이 , 지식수준등을 고려하여
+            <br />
+            가능한 최대한 많은 사용자가 불편함 없이 이용할 수 있도록 웹을 만드는
+            것
+        </p>
+
+        <hr />
+
+        <h4>* width와 height 속성</h4>
+
+        <p>
+            요소의 가로 , 세로길이를 조정할 수 있는 속성 <br />
+            고정길이(px), 가변길이(%)로 지정이 가능하다.
+        </p>
+
+        <h5>고정길이 단위(px) == 기본값</h5>
+        <!--
+        vsCode 자주 쓰는 단축키
+        행 복사 : Alt + Shift + 위 , 아래
+        행 이동 : Alt + 위, 아래
+        행 삭제 : Ctrl + X (사실 삭제 아님 잘라내기임)
+        -->
+
+        <img
+            src="resources/image/black Hole1.jpg"
+            alt="블랙홀"
+            height="150"
+            width="150"
+        />
+        <img
+            src="resources/image/black Hole2.jpg"
+            alt="블랙홀"
+            height="150"
+            width="90"
+        />
+        <img
+            src="resources/image/cat1.webp"
+            alt="고양이"
+            height="150"
+            width="200"
+        />
+        <img
+            src="resources/image/cat2.jfif"
+            alt="고양이"
+            height="150"
+            width="230"
+        />
+        <img
+            src="resources/image/dog1.jpg"
+            alt="강아지"
+            height="150"
+            width="170"
+        />
+
+        <!-- 기본값 : 화면 사이즈가 바뀌더라도 크기의 변동이 일어나지 않음-->
+
+        <hr />
+
+        <h4>가변길이 단위(%)</h4>
+
+        <img
+            src="resources/image/black Hole1.jpg"
+            alt="블랙홀"
+            height="150"
+            width="15%"
+        />
+        <img
+            src="resources/image/black Hole2.jpg"
+            alt="블랙홀"
+            height="150"
+            width="15%"
+        />
+        <img
+            src="resources/image/cat1.webp"
+            alt="고양이"
+            height="150"
+            width="15%"
+        />
+        <img
+            src="resources/image/cat2.jfif"
+            alt="고양이"
+            height="150"
+            width="15%"
+        />
+        <img
+            src="resources/image/dog1.jpg"
+            alt="강아지"
+            height="150"
+            width="15%"
+        />
+        <br /><br /><br />
+
+        <h3>미디어 관련태그</h3>
+
+        <!--
+        
+        <audio src="" controls autoplay loop />
+        <video src="" controls autoplay loop width,height poster />
+
+        src : 미디어파일 및 오디오파일의 경로
+        controls : 플레이어를 보일것인지 아니면 숨길것인지
+        autoplay : 자동재생 여부 지정
+        loop : 반복재생 여부 지정
+        poster : 썸네일 이미지 지정
+    -->
+
+        <audio src="resources/audio/major.mp3" controls autoplay></audio>
+    </body>
+</html>

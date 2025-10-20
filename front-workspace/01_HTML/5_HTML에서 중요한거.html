@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>입력양식 및 폼 관련 태그</title>
+    </head>
+    <body>
+        <!--
+        당분간 Java에서의 Scanner역할을 대신함
+    -->
+
+        <!-- 
+        System.out.print("아이디를 입력해주세요 > ");
+        Scanner sc = new Scanner(System.in);
+        String userId = sc.nextLine();
+    -->
+
+        <label>아이디를 입력해주세요 >&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" placeholder="최대 15자 이내로 작성바람" />
+
+        <br />
+        <textarea name="" id=""></textarea>
+        <br />
+        <hr />
+
+        <h1>입력 양식 관련 태그</h1>
+
+        <h2>input 태그</h2>
+
+        <p>
+            사용자에게 값을 입력받을 수 있는 텍스트상자, 체크박스 등을 만들 수
+            있는 태그
+            <br />
+            type속성으로 지정 가능
+        </p>
+
+        아이디 :
+        <input type="text" />
+        <br />
+        비밀번호 :
+        <input type="password" name="" id="" />
+        <br />
+        먹고싶은거 다 골라보세요 :
+        <br />
+        <input type="checkbox" name="" id="" />
+        마이쮸
+        <input type="checkbox" name="" id="" />
+        ABC쪼콜렛
+        <br />
+        마이쮸 주황색 드실래요? 분홍색 드실래요?
+        <br />
+        <input type="radio" name="" id="" />
+        주황색
+        <input type="radio" name="" id="" />
+        분홍색
+        <br />
+        <input type="submit" value="제출" />
+        요청받기
+
+        <hr />
+
+        <h2>Form 태그 ==> 요친구 당분간 아주 아주 중요한 친구</h2>
+
+        <p>
+            입력양식들이 들어갈 틀을 의미
+            <br />
+            form태그 내부에 위치한 submit버튼을 클릭 시
+            <br />
+            해당 form태그에 작성한(선택한) 사용자가 입력한 값들을
+            <br />
+            요청을 받아주는 서버로 넘기면서 요청하는 역할을 하는 것이
+            <br />
+            form 태그 & submit 버튼!
+            <br />
+            <br />
+            <br />
+
+            form action=""
+            <br />
+            form태그에 action 속성은 꼭 써줘야지 꼭 써줘야겠다.
+            <br />
+            method=""
+            <br />
+            method속성은 필요하면 꼭 써줘야겠다. 근데 필요하면 써줘야겠다. *
+            action : 해당 form안에 사용자가 입력한 값들을 전달하면서 요청 URL을
+            작성
+            <br />
+
+            * method : 요청 전송 방식 지정하는 속성(GET방식(기본값)/POST방식)
+            <br />
+            > GET방식 : 요청 시 사용자가 입력한 값들이 URL에 노출
+            <br />
+            > POST방식 : 요청 시 사용자가 입력한 값들이 URL에 안보임
+            <br />
+
+            form태그 내부에 존재하는 submit 버튼을 클릭 시
+            <br />
+            action속성에 작성한 URL로
+            <br />
+            method속성에 작성한 요청 방식을 통해
+            <br />
+            사용자가 input요소에 입력한 값들이 key=value세트로 전달
+            <br />
+        </p>
+        <!--
+            System.out.print("검색할 키워드를 입력해주세요 > ");
+            String keyword = sc.nextLine();
+            controller.findByKeyword(keyword);
+        -->
+
+        <form action="findByKeword" method="get">
+            검색할 키워드 :
+            <input type="text" name="keyword" />
+            <br />
+            뽀나스로 하나 더 :
+            <input type="text" name="bonus" />
+            <input type="submit" value="제출" />
+        </form>
+
+        <form action="postgo" method="post">
+            요청 시 전달 값 :
+            <input type="text" name="test" />
+            <input type="submit" value="제출" />
+        </form>
+
+        <h3>form 태그 엄청 중요함!! 꼭 잊지말고 !! 다음주에 한 번 더 보셈!!</h3>
+
+        <hr />
+
+        <h4>fieldset : 그룹을 묶는 태그</h4>
+        <h4>legend : 묶은 그룹에다가 제목을 붙여주는 태그(없어도 무방)</h4>
+
+        <form action="legend">
+            <fieldset>
+                <legend>회원가입</legend>
+                필수정보 : 사용자정보
+                <input type="text" />
+            </fieldset>
+            <fieldset>
+                추가정보 : 추천인정보
+                <input type="text" />
+            </fieldset>
+        </form>
+
+        <hr />
+
+        <h4>text와 관련된 input 요소의 type들</h4>
+
+        <form action="맘대로" method="get">
+            <h5>type = "text"</h5>
+
+            <p>- 한 줄 텍스트를 입력할 수 있는 상자(기본값)</p>
+            아이디 :
+            <input type="text" name="" id="" placeholder="꼭적으셈" required />
+            <br />
+
+            <h5>type = "password"</h5>
+            <p>- 비밀번호를 입력할 수 있는 텍스트 박사</p>
+            비밀번호 :
+            <input
+                type="password"
+                name=""
+                id=""
+                required
+                placeholder="최대 5글자"
+                maxlength="5" />
+            <br />
+            <br />
+
+            <h5>type="search/url/email"</h5>
+
+            <p>- 겉모습은 텍스트 상자와 비슷하지만 세분화된 기능을 제공</p>
+
+            검색 :
+            <input type="search" name="" id="" />
+            <br />
+            URL :
+            <input type="url" name="" id="" />
+            <br />
+            EMAIL :
+            <input type="email" name="" id="" />
+
+            <br />
+            <br />
+
+            <!--
+                required : 필수 입력사항일 경우
+                placeholder : 입력을 유도하는 꾸밈요소
+                maxlength : 작성할 수 있는 최대길이
+                
+                name : 요청 시 key값 지정, 의미를 부여해서 짓는게 좋음
+                (form태그 내부에 input요소에는 반드시 name속성을 달다 꼭!!!) 
+
+                value : input요소에 실제 입력된 값
+            -->
+
+            <input type="submit" value="제출" />
+        </form>
+
+        <h4>textarea</h4>
+
+        <p>- 텍스트 상자인데 여러 줄을 쓸 수 있음</p>
+
+        <!--
+            System.out.println("게시글 작성 서비스입니다!");
+
+            System.out.print("제목을 입력하셈 > ");
+            String boardTitle = sc.nextLine();
+
+            System.out.print("내용을 입력하셈 > ");
+            String boardContent = sc.nextLine();
+
+            bc.insertBoard(boardTitle, boardContent);
+        -->
+
+        <form action="컨트롤러주소">
+            <fieldset>
+                <legend>게시글 작성 서비스입니다</legend>
+                제목 :
+                <input type="text" name="boardTitle" size="50" />
+                <br />
+                내용 :
+                <br />
+                <textarea
+                    name="boardContent"
+                    id=""
+                    cols="58"
+                    rows="30"
+                    style="resize: none"></textarea>
+                <br />
+                <input type="submit" value="글작성" />
+            </fieldset>
+        </form>
+
+        <hr />
+
+        <h4>숫자와 관련된 input 요소의 type</h4>
+
+        <form action="number">
+            <!-- 
+                System.out.print("나이를 입력하시오 > ")
+                int age = sc.nextInt(); 
+            -->
+
+            <h5>type = "number"</h5>
+
+            나이 :
+            <input type="number" name="age" id="" />
+            <br />
+
+            <p>
+                - 숫자값만 입력할 수 있는 텍스트 상자
+                <br />
+                - 스핀박스(위 / 아래 화살표 버튼)
+            </p>
+
+            수량 :
+            <input
+                type="number"
+                name="amount"
+                id=""
+                step="5"
+                value="0"
+                min="0"
+                max="20" />
+
+            <!--
+                value : value값
+                min : 최소값
+                max : 최대값
+                step : 증가하거나 감소할 수 있는 값의 크기
+            -->
+
+            <h5>type ="range"</h5>
+
+            <p>- 슬라이드바를 이용해서 숫자 쓰는거</p>
+
+            슬라이드바 :
+            <input type="range" name="range" id="" />
+            <br />
+            <br />
+            <input type="reset" value="리셋" />
+
+            <br />
+            <br />
+            <br />
+            <input type="submit" value="발루" />
+        </form>
+
+        <hr />
+
+        <h4>날짜 및 시간과 관련된 input 요소의 type</h4>
+        <br />
+
+        <form action="날짜스">
+            <h5>type ="date/month/week/time/datetime-local"</h5>
+
+            date :
+            <input type="date" name="date" id="" />
+            <br />
+            <!-- 연도 , 월 , 일-->
+
+            month :
+            <input type="month" name="month" id="" />
+            <br />
+            week :
+            <input type="week" name="week" id="" />
+            <!--연도, 해당 년도에 몇 번째 주-->
+            <br />
+            time :
+            <input type="time" name="time" id="" />
+            <!-- 오전 / 오후,시,분-->
+            <br />
+
+            datetime :
+            <input type="datetime-local" name="dt" id="" />
+            <!-- 다쓸래! -->
+            <br />
+
+            <br />
+            <br />
+            <!--
+                <input type="submit" />
+            -->
+            <button type="button">저장해봄세</button>
+            <!-- 
+                button 요소는 form태그 내부에 위치하고 있다면
+                기본값이 defaulttype이 submit 
+            -->
+            <br />
+            <button style="border: none; background: none">
+                <img src="resources/image/cat2.jfif" alt="고양이" />
+            </button>
+
+            <br />
+        </form>
+
+        <hr />
+
+        <h4>radio buttion 과 checkbox</h4>
+
+        <form action="checked">
+            <h5>radio button (type="radio")</h5>
+            <p>
+                - 여러 개의 선택지들 중에서 오로지 한 개만 선택하게 하고싶을 때
+                <br />
+                - name속성 값이 똑같은 것들끼리 하나의 그룹으로 묶임
+                <br />
+                - 제출 시 현재 선택된 (checked) value가 넘어감
+            </p>
+            <br />
+
+            숙소 위치 평가 :
+            <br />
+
+            <input type="radio" name="location" value="9" />
+            9+ 우수
+            <br />
+            <input type="radio" name="location" value="8" />
+            8+ 좋음
+            <br />
+            <input type="radio" name="location" value="7" />
+            7+ 일반
+            <br />
+
+            <h5>type="checkbox</h5>
+            <p>
+                - 여러 개의 선택지들 중에서 여러 개를 선택 가능하게 하고 싶을때
+                씀
+                <br />
+                - 넘기고자 하는 값을 value속성의 값으로 넣어줘야함
+            </p>
+
+            객실 편의 시설 / 서비스
+            <br />
+            <br />
+            <input type="checkbox" name="service" value="에어컨" id="에어컨" />
+            <label for="에어컨">에어컨</label>
+            <br />
+            <input type="checkbox" name="service" value="난방" id="난방" />
+            <label for="난방">난방</label>
+            <br />
+            <input type="checkbox" name="service" value="TV" id="TV" />
+            <label for="TV">TV</label>
+            <br />
+
+            <br />
+            <br />
+            <br />
+            <input type="submit" value="선택" />
+
+            <br />
+            <br />
+            <br />
+        </form>
+
+        <h4>그 외 등등..</h4>
+
+        <form action="몰랑">
+            <h5>type = "color"</h5>
+            <p>
+                색상을 선택할 수 있는 type
+                <br />
+                골라골라 :
+                <input type="color" name="" id="" />
+            </p>
+
+            <h5>type = "file"</h5>
+
+            <p>
+                첨부파일을 선택할 수 있는 type
+                <br />
+                첨부파일 :
+                <input type="file" name="" id="" />
+            </p>
+
+            <h5>type = "hidden"</h5>
+
+            <p>
+                사용자한테는 보여주고싶지 않는 값을, 화면에 노출시키지도 않고
+                몰래 넘기고 싶을 때
+            </p>
+            <input type="hidden" value="45843" name="hidden" />
+
+            <input type="submit" value="제출" />
+        </form>
+
+        <hr />
+
+        <h5>버튼을 만드는 방법</h5>
+
+        <h5>input 요소를 이용해서 버튼만들기</h5>
+
+        <p>
+            - type : "submit" / "reset" / "button"
+
+            <br />
+            <input type="submit" value="제출" />
+            <input type="reset" />
+            <input type="button" value="버튼" />
+            <br />
+            <br />
+        </p>
+
+        <h5>button 요소를 이용해서 버튼을 만들기</h5>
+
+        <p>
+            - type : "submit" / "reset" / "button"
+            <br />
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button type="button">Button</button>
+
+            <!--
+                button요소가 form태그 내부에 존재할 경우
+                type속성을 생략했을 때 기본값 submit!!!
+                form태그 내부에 작성할 때는 항상 type속성을
+                까먹지 말고 꼭 귀찮더라도 적어주는것이 좋다
+            -->
+        </p>
+
+        <h4>select태그와 option태그</h4>
+
+        <p>
+            - 사용자에게 키보드로 직접 입력받는 것이 아니라 제시한 여러 개의
+            옵션 중에서 한 가지를 선택할 수 있게끔 해주는 태그
+            <br />
+            - 제출 시 현재 선택된(selected)값이 넘어감
+            <br />
+            - 각각의 option 요소에 value를 기술했을 경우 value속성값이 넘어가며,
+            value속성이 존재하지 않는다면 option의 content영역의 값이 value로
+            넘어감
+        </p>
+
+        <form action="요청보낼URL">
+            고냉지김치찌개 :
+            <select name="kimchi_zzigae" id="">
+                <option value="origin">김치찌개</option>
+                <option value="sam" selected>삼겹김치찌개</option>
+                <option value="cham">참치김치찌개</option>
+            </select>
+
+            <br />
+            <br />
+
+
+            <h5>datalist</h5>
+            <!-- select + textbox -->
+            김치찌개 : <input type="text" list="menus">
+            <datalist id="menus">
+                <option value="basic">김치</option>
+                <option value="mandu">만두</option>
+                <option value="ggumi">쭈꾸미</option>
+            </datalist>
+            <br>
+            <input type="submit" value="제출" />
+            <br>
+
+        </form>
+    </body>
+</html>

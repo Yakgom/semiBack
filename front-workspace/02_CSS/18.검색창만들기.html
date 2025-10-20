@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>안녕 나는 검색창이야</title>
+        <style>
+        
+            #header_2{
+                width: 650px;
+                height: 160px;
+            }
+            /*----------------------여기 밑에 있는것만 나중에 들고갈 예정*/
+
+            #header_2{
+                position: relative;
+            }
+
+            #search-form{
+                width: 65%;
+                height: 40%;
+                position: absolute;
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                margin: auto;
+            }
+
+            /* 검색창 form태그 내부 div속성 */
+            #search-form > div {
+                height: 100%;
+                float: left;
+            }
+            #search-text{
+                width: 80%;
+            }
+            #search-btn{
+                width: 20%;
+            }
+            /* input요소들 크기 늘리기 */
+            #search-form input{
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                border: 2px solid orangered;
+                background-color: green;
+                border-radius: 10px;
+
+            }
+            #search-form input:focus{
+                outline : 4px dashed gold;
+            }
+
+            #search-form input[type="submit"]{
+                color: pink;
+                font-weight: 800;
+                font-size: 20px;
+                background-image: url(resources/image/별빛등대.jfif);
+                background-size: cover;
+                font-family: 궁서체;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header_2">
+            <form action="search.do" method="get" id="search-form">
+                <div id="search-text">
+                    <input type="text" name="query">
+                </div>
+                <div id="search-btn">
+                    <input type="submit" value="검색">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

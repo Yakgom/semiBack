@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>푸터다 푸터</title>
+        <style>
+            div,
+            footer {
+                border: 1px solid red;
+                box-sizing: border-box;
+            }
+            footer {
+                width: 1000px;
+                height: 160px;
+            }
+
+            /*---------------------------이 밑에거만 나중에 들고감---------------------------*/
+            #footer_1,#footer_2 {
+                width: 100%;
+            }
+            #footer_1 {
+                height: 20%;
+                background-color: cornflowerblue;
+            }
+            #footer_2 {
+                height: 80%;
+            }
+            /* footer_1의 자식요소 a태그만 선택*/
+            #footer_1 > a {
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                margin: 33px;
+                vertical-align: middle;
+
+                &:hover {
+                    color: red;
+                }
+            }
+            /* p 태그에 대한 세부스타일 설정 */
+            #footer_2 > p {
+                width: 100%;
+                margin: 0;
+            }
+            #p_1{
+                height: 80%;
+                font-size: 14px;
+                padding-top: 5px ;
+                padding-left: 4px;
+            }
+            #p_2{
+                height: 20%;
+                font-size: 12px;
+                padding-left: 4px;
+                
+            }
+
+        </style>
+    </head>
+    <body>
+        <footer>
+            <div id="footer_1">
+                <a href="#">이용약관</a>
+                |
+                <a href="#">개인정보 처리방침</a>
+                |
+                <a href="#">강사 구인</a>
+            </div>
+            <div id="footer_2">
+                <p id="p_1">
+                    강남점 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F,3F, 4F, 5F, 6F <br>
+                    강남점 2관 : 서울특별시 강남구 테헤란로10길 9그랑프리 빌딩 4F, 5F, 7F <br>
+                    강남점 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F <br>
+                    종로점 : 서울특별시 중구 남대문로 120 그레이츠 청계(구 대일빌딩) 2F, 3F
+                </p>
+                <p id="p_2">
+                    Copyright © 2025 KH KH JongRo A-Class All Right Reserved
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

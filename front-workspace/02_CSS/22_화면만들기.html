@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="resources/CSS/22_header.css" />
+        <link rel="stylesheet" href="resources/CSS/22_nav.css" />
+        <style>
+            * {
+              
+                box-sizing: border-box;
+            }
+            #wrap {
+                margin: auto;
+                width: 1350px;
+                height: 1200px;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+            }
+
+            /*nav영역-------------------------------*/
+            nav {
+                flex: 0.4;
+            }
+            /*main영역------------------------------*/
+            main {
+                flex: 7.6;
+                display: flex;
+            }
+            #content_1 {
+                flex: 7.5;
+            }
+            #content_2 {
+                height: 100%;
+                flex: 2.5;
+            
+            }
+            #side1 {
+                height: 20%;
+            }
+            #side2 {
+                height: 60%;
+            }
+            #side3 {
+                height: 20%;
+            }
+            /*footer영역*/
+            footer {
+                flex: 1;
+            }
+            #footer_1,
+            #footer_2 {
+                width: 100%;
+            }
+            #footer_1 {
+                height: 70%;
+            }
+            #footer_2 {
+                height: 30%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <div id="header-left">
+                    <div id="left_1">
+                        <img
+                            src="resources/image/web-20180203004207333697-1560x1625.png"
+                            alt="대한민국지도모양"
+                        />
+                        <p>Meokja</p>
+                    </div>
+                </div>
+                <div id="header-middle">
+                    <div id="middle-content">
+                        <form action="search" method="get" id="search-form">
+                            <div id="search-location">
+                                <input
+                                    type="text"
+                                    list="location-input"
+                                    name="location"
+                                    placeholder="지역으로 검색"
+                                />
+                                <datalist id="location-input">
+                                    <option value="Seoul">서울</option>
+                                    <option value="Gyeonggi">경기</option>
+                                    <option value="Busan">부산</option>
+                                </datalist>
+                            </div>
+                            <div id="search-date">
+                                <input
+                                    type="date"
+                                    name="date"
+                                    id="date-input"
+                                />
+                            </div>
+                            <div id="search-time">
+                                <input
+                                    type="time"
+                                    name="time"
+                                    id="time-input"
+                                />
+                            </div>
+                            <div id="search-people">
+                                <select name="people" id="">
+                                    <option value="1">1명</option>
+                                    <option value="2">2명</option>
+                                    <option value="3">3명</option>
+                                    <option value="4">4명</option>
+                                    <option value="5">5명</option>
+                                </select>
+                            </div>
+                            <div id="summbit-btn">
+                                <button type="submit">
+                                    <div id="btn-image">
+                                        <img
+                                            src="resources/image/1093183.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="header-right">
+                    <div id="header-list">
+                        <ul>
+                            <li><a href="22_화면만들기/en.html">English</a></li>
+                            <span id="hlist-pipe">|</span>
+                            <li><a href="22_화면만들기.html">한국어</a></li>
+                            <span id="hlist-pipe">|</span>
+                            <li><a href="22_화면만들기/jp.html">日本語</a></li>
+                            <span id="hlist-pipe">|</span>
+                            <li><a href="22_화면만들기/cn.html">中文</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <nav>
+                <div id="nav-div">
+                    <ul id="nav-ul">
+                        <li><a href="#">홈</a></li>
+                        <li><a href="#">게시판</a></li>
+                        <li><a href="#">어떤거를</a></li>
+                        <li><a href="#">넣어야할지</a></li>
+                        <li><a href="#">모르겠다</a></li>
+                        <li><a href="#">hi</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <main>
+                <div class="" id="content_1"></div>
+                <div class="" id="content_2">
+                    <div class="" id="side1"></div>
+                    <div class="" id="side2"></div>
+                    <div class="" id="side3"></div>
+                </div>
+            </main>
+            <footer>
+                <div class="div" id="footer_1"></div>
+                <div class="div" id="footer_2"></div>
+            </footer>
+        </div>
+    </body>
+</html>

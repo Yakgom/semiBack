@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이거는 우리가 기억을 해두어야한다.</title>
+    <style>
+        #id1{
+            background-color: cornflowerblue;
+        }
+        h1{
+            color: aliceblue;
+            background-color: black;
+        }
+
+        h1{
+            color : rgb(240, 197, 140) /* 같은 스타일속성에 대해 덮어씀 */
+        }
+        
+        .class1{
+            background-color: rgb(250, 105, 105);
+            color: yellow;
+        }
+        h1{
+            color: rgb(12, 61, 45)  !important;
+        }
+    </style>
+</head>
+<body>
+    
+<h1 id="id1" class="class1">선택자 우선순위</h1>
+
+
+
+<pre>
+    기본적으로 CSS는 스타일이 위에서부터 아래 순서로 적용
+    동일한 요소를 동일한 선택자를 이용해서 스타일을 부여할 경우
+    하단에 위치한 스타일속성이 적용
+    동일한 요소를 다양한 선택자를 이용해서 스타일 부여할 경우
+    우선순위에 따라 적용
+
+
+    !important
+    ↑
+    인라인스타일 방식
+    ↑
+    아이디선택자
+    ↑
+    클래스선택자
+    ↑
+    태그선택자
+
+
+</pre>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

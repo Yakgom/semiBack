@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조잡기 연습하기</title>
+    <style>
+        div{
+            border: 1px solid red;
+        }
+        #wrap{
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+        }
+        /* 크게 3개의 영역*/
+        /* header, container , footer*/
+
+        #wrap > div {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #header {
+            height: 30%;
+        }
+        #container{
+            height: 40%;
+            
+        }
+        #footer{
+            height: 30%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="container"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
