@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Oct 21 10:24:34 KST 2025
+spring-security-web-5.5.2-sources.jar>central=
+spring-security-web-5.5.2.jar>central=
+spring-security-web-5.5.2.pom>central=
