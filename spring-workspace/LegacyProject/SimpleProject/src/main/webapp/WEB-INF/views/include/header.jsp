@@ -78,7 +78,7 @@
                 <!-- 로그인 후 -->
                 
                     <label>${sessionScope.loginMember.userName} 님 환영합니다</label> &nbsp;&nbsp;
-                    <a href="">마이페이지</a>
+                    <a href="mypage">마이페이지</a>
                     <a href="logout">로그아웃</a>
                 
                 </c:otherwise>
