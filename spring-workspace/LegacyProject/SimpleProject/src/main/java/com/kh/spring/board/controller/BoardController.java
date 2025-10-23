@@ -77,13 +77,14 @@ public class BoardController {
 	@GetMapping("/{id}")
 	public String toDetail(@PathVariable(name="id") Long boardNo , Model model) {
 	
-		log.info("게시글 번호 : {} " , boardNo);
+		//log.info("게시글 번호 : {} " , boardNo);
 		// 조회수 증가
 		// 조화수 증가에 성공했다면 SELECT로 조회
 		// 만약에 없는 게시글 번호라면 예외발생
 		
 		BoardDTO board = boardService.findByBoardNo(boardNo);
 		
+		System.out.println(board);
 		model.addAttribute("board", board);
 		
 		return "board/detail";	
