@@ -1,0 +1,10 @@
+.header-ul {
+  padding: 0px;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+.header-div {
+  width: 100%;
+}
