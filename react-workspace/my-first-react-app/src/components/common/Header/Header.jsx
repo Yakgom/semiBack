@@ -40,6 +40,26 @@ const Header = () => {
               03
             </a>
           </li>
+
+          <li>
+            <a
+              onClick={() => {
+                navi("/input");
+              }}
+            >
+              input
+            </a>
+          </li>
+
+          <li>
+            <a
+              onClick={() => {
+                navi("/foods");
+              }}
+            >
+              Foods
+            </a>
+          </li>
         </ul>
       </div>
     </>

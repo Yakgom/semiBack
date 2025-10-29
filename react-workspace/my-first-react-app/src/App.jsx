@@ -7,6 +7,9 @@ import Fusion from "./components/modules/Fusion";
 import Fusion2 from "./components/modules/Fusion2";
 import Chapter02 from "./components/Chapter02/Chapter02";
 import Chapter03 from "./components/Chapter03/Chapter03";
+import Chapter03_Input from "./components/Chapter03/Chapter03_input";
+import Foods from "./components/Busan/Foods";
+import Detail from "./components/Busan/Detail/Detail";
 
 //const el = React.createElement("p", null, "Hello React World!");
 function App() {
@@ -30,6 +33,9 @@ function App() {
         <Route path="/01" element={<Chapter01 />} />
         <Route path="/02" element={<Chapter02 />} />
         <Route path="/03" element={<Chapter03 />} />
+        <Route path="/input" element={<Chapter03_Input />} />
+        <Route path="/foods" element={<Foods />} />
+        <Route path="/foods/:id" element={<Detail />} />
         <Route path="/*" element={<h1>존재하지 않는 페이지입니다.</h1>} />
       </Routes>
     </>

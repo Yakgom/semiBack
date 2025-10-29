@@ -12,17 +12,26 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.kh.spring.api.model.dto.Comment;
+import com.kh.spring.board.model.mapper.BoardMapper;
+
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class ApiService {
 
+	
+		private final BoardMapper mapper;
+	
 	public String requestBeef() {
 		
 		final String API_KEY ="87accb0e4de58f514dd664d6ec2beb1beb993812e954fa6c14d0334ceb045d8f";
@@ -194,6 +203,17 @@ public class ApiService {
 	    	String apiResponse = new RestTemplate().getForObject(uri, String.class);
 	    	
 	    	return apiResponse;
+	    }
+	    
+	    public void saveComment(Comment comment) {
+	    	
+	    	 mapper.saveComment(comment);
+	    	
+	    	
+	    }
+	    
+	    public List<Comment> selectAll(Long seq){
+	    	return mapper.selectAll(seq);
 	    }
 	    
 }
