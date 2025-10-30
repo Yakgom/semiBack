@@ -11,7 +11,7 @@ const Comments = (props) => {
   const id = props.id;
   useEffect(() => {
     // 전체 후기를 싹다 조회할 예정이 아님
-    axios.get(`http://localhost/spring/api/comments/${id}`).then((result) => {
+    axios.get(`http://localhost/api/comments/${id}`).then((result) => {
       //console.log(result);
       setComments([...result.data]);
     });

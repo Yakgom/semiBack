@@ -31,19 +31,17 @@ const Foods = () => {
     //   url: "http://localhost/spring/api/busan?pageNo=1",
     //   method: "get",
     // }).then((result) => console.log(result));
-    axios
-      .get(`http://localhost/spring/api/busan?pageNo=${pageNo}`)
-      .then((result) => {
-        //console.log(result);
+    axios.get(`http://localhost/api/busans?pageNo=${pageNo}`).then((result) => {
+      //console.log(result);
 
-        const response = result.data.getFoodKr.item;
-        setFoods([...foods, ...response]);
+      const response = result.data.getFoodKr.item;
+      setFoods([...foods, ...response]);
 
-        //console.log(response);
-        if (response.length < 6) {
-          sethasMore(false);
-        }
-      });
+      //console.log(response);
+      if (response.length < 6) {
+        sethasMore(false);
+      }
+    });
   }, [pageNo]);
 
   const buttonHandler = () => {
