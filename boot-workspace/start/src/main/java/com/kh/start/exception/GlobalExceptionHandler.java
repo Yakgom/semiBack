@@ -3,6 +3,7 @@ package com.kh.start.exception;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,6 +14,18 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+	
+	
+	private ResponseEntity<Map<String,String>> createResponseEntity(RuntimeException e,HttpStatus httpStatus){
+		Map<String,String> error = new HashMap();
+		error.put("error-message", e.getMessage());
+		return ResponseEntity.status(httpStatus).body(error);
+	}
+	
+	@ExceptionHandler(CustomAuthenitcationException.class)
+	public ResponseEntity<Map<String,String>> handleAuth(CustomAuthenitcationException e){
+		return createResponseEntity(e,HttpStatus.UNAUTHORIZED);
+	}
 
 	@ExceptionHandler(IdDuplicateException.class)
 	public ResponseEntity<?> handlerDuplicateId(IdDuplicateException e){
@@ -22,6 +35,15 @@ public class GlobalExceptionHandler {
 		return ResponseEntity.badRequest().body(error);
 		
 	}
+	
+	@ExceptionHandler(UsernameNotFoundException.class)
+	public ResponseEntity<?> handlerUsernameNotFound(UsernameNotFoundException e){
+		Map<String,String> error = new HashMap();
+		error.put("error-message", e.getMessage());
+		return ResponseEntity.badRequest().body(error);	
+		}
+	
+	
 	
 	
 	
