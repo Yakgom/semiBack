@@ -1,12 +1,17 @@
 package com.kh.start.member.controller;
 
+import java.util.Map;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kh.start.member.model.dao.MemberMapper;
+import com.kh.start.member.model.dto.ChangePasswordDTO;
 import com.kh.start.member.model.dto.MemberDTO;
 import com.kh.start.member.model.service.MemberService;
 
@@ -48,5 +53,32 @@ public class MemberController {
 		
 	}
 	
+	
+	// 비밀번호 변경 기능 구현
+	@PutMapping
+	public ResponseEntity<?> changePassword(@Valid @RequestBody ChangePasswordDTO password){
+		log.info("비밀번호 정보 : {} " , password);
+		// 1번 비밀번호 입력값에 대한 유효성 검증
+		// 2번 지금 요청을 보낸 사용자가 입력한 기존의 비밀번호가 잘 맞는지 확인
+		// 3번 새로 입력한 비밀번호에 대한 암호화 작업
+		// 4번 새 비밀번호로 변경
+		
+		
+		memberService.changePassword(password);
+		
+		return ResponseEntity.status(HttpStatus.CREATED).build();
+	}
+	
+	@DeleteMapping
+	public ResponseEntity<?> deleteByPassword(@RequestBody Map<String,String> request){
+		
+		log.info("이게 오나? {} ", request);
+		
+		memberService.deleteByPassword(request.get("memberPwd"));
+		
+		return ResponseEntity.ok("옥까이");
+		
+		
+	}
 	
 }

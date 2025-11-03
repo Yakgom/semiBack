@@ -11,6 +11,7 @@ import javax.crypto.SecretKey;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
@@ -53,6 +54,12 @@ public class JwtUtil {
 				.expiration(Date.from(Instant.now().plus(Duration.ofDays(3))))
 				 .signWith(key) //서명
 				 .compact();
+		
+	}
+	
+	public Claims parseJwt(String token) {
+		
+		return Jwts.parser().verifyWith(key).build().parseSignedClaims(token).getPayload();
 		
 	}
 	

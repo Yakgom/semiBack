@@ -10,14 +10,22 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.kh.start.configuration.filter.JwtFilter;
+
+import lombok.RequiredArgsConstructor;
 
 @Configuration
 @EnableMethodSecurity
+@RequiredArgsConstructor
 public class SecurityConfigure {
 
+	private final JwtFilter jwtFilter;
 	// 우리의 문제점 : 시큐리티의 formLogin 필터가 자꾸만 인증이 안됐다고 회원가입도 못하게함
 	// 해결방법 : form 로그인 안쓸래 하고 filterChain을 빈으로 등록
 	@Bean
@@ -42,7 +50,18 @@ public class SecurityConfigure {
 				.authorizeHttpRequests(requests -> {
 					requests.requestMatchers(HttpMethod.POST,"/auth/login" , "/members").permitAll();
 					requests.requestMatchers(HttpMethod.PUT,"/members").authenticated();
+					requests.requestMatchers(HttpMethod.DELETE,"/members").authenticated();
+					requests.requestMatchers(HttpMethod.POST, "/boards").authenticated();
 					})
+				/*
+				 * 
+				 * sessionManagement : 세션을 어떻게 관리할것인지 지정
+				 * sessionCreatePolicy : 세션 사용정책을 설정
+				 * 
+				 * 
+				 */
+				.sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+				.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
 				.build();
 		
 		
