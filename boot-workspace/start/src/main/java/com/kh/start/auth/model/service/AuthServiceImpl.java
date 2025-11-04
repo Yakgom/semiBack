@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.kh.start.auth.model.vo.CustomUserDetails;
 import com.kh.start.exception.CustomAuthenitcationException;
 import com.kh.start.member.model.dto.MemberDTO;
-import com.kh.start.member.model.service.TokenService;
+import com.kh.start.token.model.service.TokenService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

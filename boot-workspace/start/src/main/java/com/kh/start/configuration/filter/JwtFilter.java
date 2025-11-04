@@ -77,7 +77,25 @@ public class JwtFilter extends OncePerRequestFilter {
 		}catch(ExpiredJwtException e) {
 			log.info("토큰의 유효기간 만료");
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			response.setContentType("text/html; charset=UTF-8");
 			response.getWriter().write("토큰 만료");
+			/*
+	          *  axios.post(url, body, tokens)
+	          *      .then(result => {
+	          *      result어쩌고저쩌구
+	          *      }).catch(e => {
+	          *         e == 토큰만료
+	          *         axios.post(/auth/refresh, 리프레시토큰값)
+	          *             .then(result => {
+	          *                  새 토큰 저장소에 저장;
+	          *                  useEffect의 의존성 요소를 변환시켜 useEffect를 다시 수행;
+	          *                })
+	          *             .catch(e => {
+	          *                   alert("니 로그인 다시해야댐");
+	          *                   useNavi("/login");
+	          *                })
+	          *          })
+	          */
 			return;
 		}catch(JwtException e ) {
 			log.info("서버에서 만들어진 토큰이 아님");

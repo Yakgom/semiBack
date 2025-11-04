@@ -1,14 +1,16 @@
-package com.kh.start.member.model.service;
+package com.kh.start.token.model.service;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import com.kh.start.exception.CustomAuthenitcationException;
 import com.kh.start.token.model.dao.TokenMapper;
 import com.kh.start.token.model.vo.RefreshToken;
 import com.kh.start.token.util.JwtUtil;
 
+import io.jsonwebtoken.Claims;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -77,4 +79,24 @@ public class TokenService {
 	// 추후 AccessToken의 만료기간이 지나서 토큰 갱신 요청이 들어왔을 때
 	// 사용자에게 전달받은 RefreshToken이 DB에 존재하면서 만료기간이 지나지않았는지를 검증하는 메소드
 
+	public Map<String,String> validateToken(String refreshToken) {
+		
+		RefreshToken token = tokenMapper.findByToken(refreshToken);
+		
+		if(token == null || token.getExpration() < System.currentTimeMillis() ) {
+			throw new CustomAuthenitcationException("이 토큰 뭐임?");
+		}
+		
+		Claims claims = tokenUtil.parseJwt(refreshToken);
+		String username = claims.getSubject();
+		
+		return createTokens(username);
+		
+	
+		
+		
+		
+	}
+	
+	
 }

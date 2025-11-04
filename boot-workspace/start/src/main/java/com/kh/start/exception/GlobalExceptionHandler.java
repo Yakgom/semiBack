@@ -1,5 +1,6 @@
 package com.kh.start.exception;
 
+import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,6 +44,10 @@ public class GlobalExceptionHandler {
 		return ResponseEntity.badRequest().body(error);	
 		}
 	
+	@ExceptionHandler(InvalidParameterException.class)
+	public ResponseEntity<?> handlerInvalidParameter(InvalidParameterException e){
+		return createResponseEntity(e, HttpStatus.BAD_REQUEST);
+	}
 	
 	
 	
