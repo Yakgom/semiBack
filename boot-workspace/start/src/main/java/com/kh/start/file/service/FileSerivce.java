@@ -32,7 +32,7 @@ public class FileSerivce {
 		try {
 			Files.copy(file.getInputStream(),targetLocation,StandardCopyOption.REPLACE_EXISTING);
 			
-			return "http://localhost/uploads/" + originFilename;
+			return "http://localhost:8081/uploads/" + originFilename;
 		} catch (IOException e) {
 			
 			throw new RuntimeException("이상요상 파일임 ㅎ ");

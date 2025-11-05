@@ -58,11 +58,11 @@ public class SecurityConfigure {
                      .csrf(AbstractHttpConfigurer::disable)
                      .cors(Customizer.withDefaults())
                      .authorizeHttpRequests(requests -> {
-                        requests.requestMatchers(HttpMethod.POST, "/auth/login", "/members", "/auth/refresh").permitAll();
+                        requests.requestMatchers(HttpMethod.POST, "/auth/login", "/members", "/auth/refresh" ).permitAll();
                         requests.requestMatchers(HttpMethod.PUT, "/members", "/boards/**").authenticated();
                         requests.requestMatchers(HttpMethod.DELETE, "/members", "/boards/**").authenticated();
                         requests.requestMatchers(HttpMethod.POST, "/boards", "/comments").authenticated();
-                        requests.requestMatchers(HttpMethod.GET, "/boards/**", "/comments/**").permitAll();
+                        requests.requestMatchers(HttpMethod.GET, "/boards/**", "/comments/**","/uploads/**").permitAll();
                         requests.requestMatchers(HttpMethod.POST, "/admin/**").hasRole("ADMIN");
                         
                      })
@@ -79,7 +79,7 @@ public class SecurityConfigure {
    @Bean
    public CorsConfigurationSource corsConfigurationSource() {
       CorsConfiguration configuration = new CorsConfiguration();
-      configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173"));
+      configuration.setAllowedOrigins(Arrays.asList("http://localhost:5174"));
       configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
       configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-type"));
       configuration.setAllowCredentials(true);
