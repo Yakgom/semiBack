@@ -7,7 +7,7 @@ spring:
     password: KBJ1234
     driver-class-name: oracle.jdbc.OracleDriver
   mvc:
-    static-path-pattern: /upload/**
+    static-path-pattern: /uploads/**
   web:
     resources:
       static-locations: file:uploads/  

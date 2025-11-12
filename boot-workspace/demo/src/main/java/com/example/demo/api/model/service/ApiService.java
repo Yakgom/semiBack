@@ -28,7 +28,7 @@ private final CommentMapper mapper;
 
 public String requestBusan(int pageNo) {
 	
-	final String SERVICE_KEY ="?serviceKey=ce2dca8004788f0f0fd0c7ccafd032e98bdcfec2c32a3f4843fe96950e538dda";
+	final String SERVICE_KEY ="?serviceKey=ce2dca8004788f0f0fd0c7ccafd032ed98bdcfec2c32a3f4843fe96950e538dda";
 	
 	StringBuilder sb = new StringBuilder();
 	sb.append("https://apis.data.go.kr/6260000/FoodService/getFoodKr");
